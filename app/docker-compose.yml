@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - gem_cache:/gems
+    env_file:
+      - env/database
+
+  database:
+    image: mariadb
+    env_file:
+      - env/database
+    volumes:
+      - db_data:/var/lib/mysql
+
+  webpacker:
+    build: .
+    ports:
+      - "3035:3035"
+    volumes:
+      - .:/app
+    command:
+      - bin/webpack-dev-server
+
+volumes:
+  gem_cache:
+  db_data:
