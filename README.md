@@ -1,10 +1,10 @@
-Assignments:
+# Overview:
 Use Docker Compose to set up an app with:
 * Rails
 * Mariadb
 * Webpack Dev Server
 
-Steps
+# Steps
 1. cd to exercise diretory
 2. Look at the files:
    * Gemfile. (it only has rails in it)
