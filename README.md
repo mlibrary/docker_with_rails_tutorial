@@ -50,6 +50,7 @@ Then in app/views/home/index.html.erb put `<%= javascript_pack_tag 'hello_react'
     hmr: true
 ```
 Like with the host for mysql, the host for the webpacker dev server will be the service name. 
+
 21. `docker-compose up` again. The webpacker service will have to build. Ordinarily it shouldn't have to bundle install, but it might this time because we haven't rebuilt since step 3. Go to localhost:3000/home/index in the browser. 
 22. Edit the file app/javascripts/packs/hello_react.jsx In line 23 Change "React" to something else. Save and then see that localhost:3000/home/index reloaded with the new text.
 
